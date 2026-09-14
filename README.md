@@ -11,12 +11,12 @@ A variável de interesse é a variação percentual entre o valor global atual d
 **Estágio 1 - Ocorrência de reajuste**
 Classificador binário que prevê se um contrato terá ou não alteração de valor, treinado sobre a base completa com balanceamento de classes (`class_weight='balanced'`).
 
-**Estágio 2 - Magnitude do reajuste**
+**Estágio 2 - Faixas do reajuste**
 Condicional ao Estágio 1: entre os contratos que de fato sofreram alteração, classifica a magnitude em quatro faixas (Redução de Valor, Baixo, Médio/Alto, Extremo).
 
 ## Correção de censuramento temporal
 
-Contratos cuja vigência ainda não havia terminado no momento da última atualização do registro no PNCP foram excluídos da base. Sem esse filtro, contratos jovens demais para terem tido chance de sofrer reajuste eram contabilizados como "sem alteração", distorcendo o desbalanceamento das classes.
+Contratos cuja vigência ainda não havia terminado no momento da última atualização do registro no PNCP foram excluídos da base. Sem esse filtro, contratos "jovens" demais para terem tido chance de sofrer reajuste eram contabilizados como "sem alteração", distorcendo o desbalanceamento das classes.
 
 ## Variáveis preditoras
 
